@@ -31,7 +31,6 @@ public class RegistrationTest {
         String userEmail = fakeValuesService.bothify("????##@gmail.com");
         String userNumber = fakeValuesService.regexify("[0-9]{10}");
         String address = faker.address().fullAddress();
-        File file = new File("src/test/java/helpers/test.jpg");
 
         String gender = "Male",
                 monthofbirth = "November",
@@ -44,10 +43,7 @@ public class RegistrationTest {
                 city = "Delhi",
                 pic = "test.jpg";
 
-
         open("https://demoqa.com/automation-practice-form");
-
-
 
                 $("#firstName").val(firstName);
                 $("#lastName").val(lastName);
@@ -64,7 +60,7 @@ public class RegistrationTest {
                 $(".subjects-auto-complete__menu-list").$(byText(fullsubject)).click();
 
                 $("#hobbiesWrapper").$(byText(hobby)).click();
-                $("#uploadPicture").uploadFile(file);
+                $("#uploadPicture").uploadFile(new File("src/test/resources/" + pic));
                 $("#currentAddress").val(address);
                 $("#state").scrollTo().click();
                 $(byText(state)).click();
@@ -72,7 +68,6 @@ public class RegistrationTest {
                 $(byText(city)).click();
                 $("#submit").scrollTo().click();
                 $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-
                 //Проверка формы на корректность заполнения
                 $x("*//tr[1]/td[2]").shouldHave(text(firstName + " " + lastName));
                 $x("*//tr[2]/td[2]").shouldHave(text(userEmail));
@@ -84,7 +79,7 @@ public class RegistrationTest {
                 $x("*//tr[8]/td[2]").shouldHave(text(pic));
                 $x("*//tr[9]/td[2]").shouldHave(text(address));
                 $x("*//tr[10]/td[2]").shouldHave(text(state + " " + city));
-                $("#closeLargeModal").click();
+
 
     }
 
