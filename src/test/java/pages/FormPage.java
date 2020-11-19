@@ -29,9 +29,9 @@ public class FormPage {
     }
     public FormPage inputDateBirthday(String dayofbirth, String monthofbirth, String yearofbirth) {
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__day--0" + dayofbirth).click();
         $(".react-datepicker__month-select").selectOption(monthofbirth);
         $(".react-datepicker__year-select").selectOption(yearofbirth);
+        $(".react-datepicker__day--0" + dayofbirth).click();
 
         return this;
     }
