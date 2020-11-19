@@ -66,7 +66,7 @@ public class FormPage {
         $("#submit").scrollTo().click();
         return this;
     }
-    public void verifyValue (){
+    public void verifyHeaderValue (){
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
 
     }

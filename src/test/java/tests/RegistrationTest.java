@@ -58,7 +58,7 @@ public class RegistrationTest extends TestBase {
                 .selectCity(city)
                 .clickSubmitBtn()
                 //$("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-                .verifyValue();
+                .verifyHeaderValue();
 
         FormPage
                 .verifyCorrectValues(firstName, lastName, userEmail, gender, userNumber, dayofbirth,
