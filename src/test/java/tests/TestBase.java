@@ -1,7 +1,7 @@
-//package tests;
+package tests;
 
-//import pages.FormPage;
+import pages.FormPage;
 
-//public class TestBase {
-  //  FormPage FormPage = new FormPage();
-//}
+public class TestBase {
+    FormPage FormPage = new FormPage();
+}
